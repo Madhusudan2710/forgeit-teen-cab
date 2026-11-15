@@ -150,6 +150,7 @@ button {
   transition:
     transform 0.25s,
     background 0.25s,
+    color 0.25s,
     box-shadow 0.25s;
 }
 .nav-cta span {
@@ -157,9 +158,13 @@ button {
   font-size: 17px;
 }
 .nav-cta:hover {
-  background: var(--forest-3);
+  background: var(--gold);
+  color: var(--forest);
   transform: translateY(-2px);
   box-shadow: 0 9px 20px #082b2024;
+}
+.nav-cta:hover span {
+  color: var(--forest);
 }
 .menu-toggle {
   display: none;
@@ -1355,6 +1360,28 @@ button {
 .footer-column a:hover {
   color: white;
   transform: translateX(3px);
+}
+.footer-column .footer-cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border: 1px solid #c8aa6266;
+  border-radius: 8px;
+  color: var(--gold-light);
+  transition:
+    color 0.2s,
+    background 0.2s,
+    border-color 0.2s,
+    transform 0.2s;
+}
+.footer-column .footer-cta:hover {
+  border-color: var(--gold);
+  background: var(--gold);
+  color: var(--forest);
+  transform: translateY(-1px);
+}
+.footer-column .footer-cta::after {
+  display: none;
 }
 .footer-bottom {
   display: flex;
@@ -2951,7 +2978,7 @@ html {
   transform-origin: left;
   transition: transform 0.3s;
 }
-.footer-column a:hover:after {
+.footer-column a:not(.footer-cta):hover:after {
   transform: scaleX(1);
 }
 .scroll-progress span {
@@ -2963,7 +2990,8 @@ html {
     transition:
       transform 0.25s var(--motion-ease),
       box-shadow 0.25s,
-      background 0.25s;
+      background 0.25s,
+      color 0.25s;
   }
 }
 @media (max-width: 780px) {
