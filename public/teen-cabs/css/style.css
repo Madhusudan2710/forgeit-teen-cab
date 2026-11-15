@@ -4184,6 +4184,182 @@ body[data-theme="green"] .theme-toggle-dot {
   background: #c8aa62;
   box-shadow: 0 0 0 3px #c8aa6233;
 }
+
+/* Deep forest colorway, based on the supplied Forgeit reference. */
+body[data-theme="green"] {
+  --forest: #d8c18a;
+  --forest-2: #12351f;
+  --forest-3: #94b49b;
+  --ink: #e9e3d2;
+  --muted: #87a18d;
+  --cream: #001d11;
+  --paper: #001d11;
+  --line: #173b27;
+  --tc-green: #d8c18a;
+  --tc-green-light: #12351f;
+  --tc-green-mid: #94b49b;
+  --tc-cream: #001d11;
+  --tc-white: #0d2819;
+  --tc-ink: #e9e3d2;
+  --tc-muted: #87a18d;
+  background: #001d11;
+  color: #e9e3d2;
+}
+body[data-theme="green"] .site-header,
+body[data-theme="green"] .site-header.is-scrolled {
+  background: rgba(0, 29, 17, .94);
+  border-bottom-color: #173b27;
+}
+body[data-theme="green"] .hero,
+body[data-theme="green"] .problem,
+body[data-theme="green"] .solution,
+body[data-theme="green"] .how,
+body[data-theme="green"] .experience-section,
+body[data-theme="green"] .team-section,
+body[data-theme="green"] .beta-section,
+body[data-theme="green"] .site-footer {
+  background: #001d11;
+  color: #87a18d;
+}
+body[data-theme="green"] .hero:before {
+  border-color: #143522;
+  box-shadow: 0 0 0 55px #062416, 0 0 0 110px #032014;
+}
+body[data-theme="green"] .brand-mark {
+  background: #075333;
+  color: #d5b76d;
+}
+body[data-theme="green"] .hero-bottom-line {
+  background: #173b27;
+}
+body[data-theme="green"] .floating-ui {
+  color: #183b2b;
+}
+body[data-theme="green"] .floating-ui strong {
+  color: #183b2b;
+}
+body[data-theme="green"] .hero h1,
+body[data-theme="green"] .section-intro h2,
+body[data-theme="green"] .solution-heading h2,
+body[data-theme="green"] .team-heading h2,
+body[data-theme="green"] .beta-inner h2,
+body[data-theme="green"] .team-profile h3,
+body[data-theme="green"] .team-roster-heading h3,
+body[data-theme="green"] .core-member-copy h3,
+body[data-theme="green"] .problem-row h3,
+body[data-theme="green"] .solution-point h3,
+body[data-theme="green"] .journey-step h3,
+body[data-theme="green"] .experience-intro h2,
+body[data-theme="green"] .feature-copy h3 {
+  color: #f0d8a7;
+}
+body[data-theme="green"] .hero h1 em,
+body[data-theme="green"] .section-intro h2 em,
+body[data-theme="green"] .solution-heading h2 em,
+body[data-theme="green"] .team-heading h2 em,
+body[data-theme="green"] .beta-inner h2 em {
+  color: #d5b76d;
+}
+body[data-theme="green"] .site-header .brand-copy,
+body[data-theme="green"] .site-header .nav-links > a:not(.nav-cta),
+body[data-theme="green"] .hero-description,
+body[data-theme="green"] .section-intro > p,
+body[data-theme="green"] .intro-split > p,
+body[data-theme="green"] .solution-heading > p,
+body[data-theme="green"] .problem-row p,
+body[data-theme="green"] .solution-point p,
+body[data-theme="green"] .journey-step p,
+body[data-theme="green"] .team-profile p,
+body[data-theme="green"] .team-heading-copy > p,
+body[data-theme="green"] .beta-inner > p,
+body[data-theme="green"] .footer-brand-block > p,
+body[data-theme="green"] .footer-column > a,
+body[data-theme="green"] .team-role,
+body[data-theme="green"] .section-index,
+body[data-theme="green"] .eyebrow {
+  color: #87a18d;
+}
+body[data-theme="green"] .site-header .nav-links > a:not(.nav-cta):hover,
+body[data-theme="green"] .site-header .nav-links > a.is-active {
+  color: #f0d8a7;
+}
+body[data-theme="green"] .nav-cta,
+body[data-theme="green"] .button-gold {
+  background: linear-gradient(110deg, #e1c27d, #a8cf9d);
+  color: #082114;
+  box-shadow: 0 10px 32px #c9b36a26;
+}
+body[data-theme="green"] .nav-cta span,
+body[data-theme="green"] .button-gold span {
+  color: #173b27;
+}
+body[data-theme="green"] .text-link,
+body[data-theme="green"] .trust-row,
+body[data-theme="green"] .availability,
+body[data-theme="green"] .hero-bottom,
+body[data-theme="green"] .footer-bottom,
+body[data-theme="green"] .footer-column h4 {
+  color: #87a18d;
+}
+body[data-theme="green"] .hero-bottom-line,
+body[data-theme="green"] .problem-list,
+body[data-theme="green"] .problem-row,
+body[data-theme="green"] .solution-points,
+body[data-theme="green"] .solution-point,
+body[data-theme="green"] .footer-bottom {
+  border-color: #173b27;
+}
+body[data-theme="green"] .solution-stamp,
+body[data-theme="green"] .row-symbol,
+body[data-theme="green"] .journey-icon {
+  border-color: #244631;
+  color: #d5b76d;
+}
+body[data-theme="green"] .solution-point:hover,
+body[data-theme="green"] .theme-toggle:hover {
+  background: #0d2819;
+}
+body[data-theme="green"] .team-founder-card,
+body[data-theme="green"] .team-card,
+body[data-theme="green"] .core-member,
+body[data-theme="green"] .feature-showcase {
+  background-color: #0d2819;
+  border-color: #173b27;
+}
+body[data-theme="green"] .experience-intro h2,
+body[data-theme="green"] .experience-intro h2 span,
+body[data-theme="green"] .footer-brand-block .brand-copy {
+  color: #f0d8a7;
+}
+body[data-theme="green"] .stats-panel {
+  background: #0d2819;
+}
+body[data-theme="green"] .theme-toggle {
+  width: 42px;
+  height: 24px;
+  justify-content: flex-end;
+  padding: 3px;
+  border-color: #695c36;
+  background: #183722;
+  color: #f0d8a7;
+}
+body[data-theme="green"] .theme-toggle-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+body[data-theme="green"] .theme-toggle-dot {
+  width: 16px;
+  height: 16px;
+  background: #f0d36b;
+  box-shadow: 0 0 0 2px #f0d36b22;
+}
 @media (max-width: 1000px) {
   .nav { gap: 16px; }
   .nav-links { gap: 16px; }
