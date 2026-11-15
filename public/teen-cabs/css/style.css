@@ -4098,3 +4098,97 @@ html {
     animation-duration:.01ms!important;transition-duration:.01ms!important;
   }
 }
+
+/* Independent light and green colorways */
+body {
+  transition: background-color .35s ease, color .35s ease;
+}
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  flex-shrink: 0;
+  padding: 10px 13px;
+  border: 1px solid #dce4d9;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--forest);
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .25s, border-color .25s, color .25s;
+}
+.theme-toggle:hover {
+  background: #edf2eb;
+  border-color: #aabbaa;
+}
+.theme-toggle:focus-visible {
+  outline: 3px solid #4f8b61;
+  outline-offset: 3px;
+}
+.theme-toggle-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #b9a15d;
+  box-shadow: 0 0 0 3px #b9a15d20;
+}
+body[data-theme="green"] {
+  --forest: #123f2c;
+  --forest-2: #1d583b;
+  --forest-3: #2a7048;
+  --ink: #183b2b;
+  --muted: #587363;
+  --cream: #e0eee1;
+  --paper: #f1f7ef;
+  --line: #d2e2d3;
+  --tc-green: #123f2c;
+  --tc-green-light: #1d583b;
+  --tc-green-mid: #2a7048;
+  --tc-cream: #e0eee1;
+  --tc-white: #f1f7ef;
+  --tc-ink: #183b2b;
+  --tc-muted: #587363;
+  background: var(--paper);
+  color: var(--ink);
+}
+body[data-theme="green"] .site-header,
+body[data-theme="green"] .site-header.is-scrolled {
+  background: rgba(241, 247, 239, .94);
+}
+body[data-theme="green"] .hero,
+body[data-theme="green"] .solution {
+  background: var(--cream);
+}
+body[data-theme="green"] .problem,
+body[data-theme="green"] .how {
+  background: var(--paper);
+}
+body[data-theme="green"] .experience-section {
+  --tc-cream: #e0eee1;
+  --tc-white: #f1f7ef;
+}
+body[data-theme="green"] .team-section {
+  background-color: #e0eee1;
+}
+body[data-theme="green"] .theme-toggle {
+  background: #123f2c;
+  border-color: #123f2c;
+  color: #f1f7ef;
+}
+body[data-theme="green"] .theme-toggle:hover {
+  background: #1d583b;
+  border-color: #1d583b;
+}
+body[data-theme="green"] .theme-toggle-dot {
+  background: #c8aa62;
+  box-shadow: 0 0 0 3px #c8aa6233;
+}
+@media (max-width: 1000px) {
+  .nav { gap: 16px; }
+  .nav-links { gap: 16px; }
+  .theme-toggle { padding-inline: 10px; }
+}
+@media (max-width: 780px) {
+  .theme-toggle { margin-left: auto; }
+}
