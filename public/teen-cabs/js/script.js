@@ -110,7 +110,7 @@
     heroTL
       .from(".site-header .brand", { y: -18, autoAlpha: 0, duration: 0.65 })
       .from(
-        ".site-header .nav-links > *",
+        ".site-header .nav-links > a:not(.nav-cta)",
         { y: -12, autoAlpha: 0, duration: 0.42, stagger: 0.065 },
         "-=.35",
       )
@@ -371,7 +371,7 @@
         )
         .from(
           ".beta-inner .button, .beta-inner small",
-          { y: 18, autoAlpha: 0, duration: 0.55, stagger: 0.13 },
+          { autoAlpha: 0, duration: 0.55, stagger: 0.13 },
           "-=.25",
         );
     }
