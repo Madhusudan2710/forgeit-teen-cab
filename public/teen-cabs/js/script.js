@@ -8,6 +8,22 @@
     menu = $(".menu-toggle"),
     nav = $(".nav-links");
   const progress = $(".scroll-progress span");
+  const themeToggle = $(".theme-toggle");
+
+  // Theme switch
+  if (themeToggle) {
+    const themeLabel = $(".theme-toggle-label", themeToggle);
+    themeToggle.addEventListener("click", () => {
+      const isGreen = document.body.dataset.theme !== "green";
+      document.body.dataset.theme = isGreen ? "green" : "light";
+      themeToggle.setAttribute("aria-pressed", String(isGreen));
+      themeToggle.setAttribute(
+        "aria-label",
+        `Switch to ${isGreen ? "light" : "green"} theme`,
+      );
+      if (themeLabel) themeLabel.textContent = `${isGreen ? "Light" : "Green"} theme`;
+    });
+  }
 
   // Navigation
   if (menu && nav) {
