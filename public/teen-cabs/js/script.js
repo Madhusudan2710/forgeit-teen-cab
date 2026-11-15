@@ -4,6 +4,28 @@
   const $$ = (s, root = document) => [...root.querySelectorAll(s)];
   const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const finePointer = matchMedia("(pointer:fine)").matches;
+  const teamSection = $(".team-section-refresh");
+
+  if (teamSection && !reduceMotion) {
+    const teamMotionTargets = $$(
+      ".team-modern-heading > *, .team-modern-card, .team-modern-footer",
+      teamSection,
+    );
+
+    if ("IntersectionObserver" in window) {
+      teamSection.classList.add("is-motion-ready");
+      const teamMotionObserver = new IntersectionObserver(
+        (entries) =>
+          entries.forEach((entry) =>
+            entry.target.classList.toggle("is-in-view", entry.isIntersecting),
+          ),
+        { threshold: 0.16, rootMargin: "0px 0px -8% 0px" },
+      );
+      teamMotionTargets.forEach((target) => teamMotionObserver.observe(target));
+    } else {
+      teamMotionTargets.forEach((target) => target.classList.add("is-in-view"));
+    }
+  }
   const header = $(".site-header"),
     menu = $(".menu-toggle"),
     nav = $(".nav-links");
@@ -314,67 +336,6 @@
       );
     }
 
-    // TEAM — cinematic founder reveal, split leadership cards, compact crew roster
-    const teamSection = $(".team-section");
-    if (teamSection) {
-      gsap.from(".team-heading-copy > *", {
-        x: -38, autoAlpha: 0, duration: 0.75, stagger: 0.12,
-        ease: "power3.out",
-        scrollTrigger: { trigger: ".team-heading", start: "top 82%", once: true },
-      });
-      gsap.from(".team-heading-mark", {
-        scale: 0.72, rotate: 18, autoAlpha: 0, duration: 1,
-        ease: "back.out(1.5)",
-        scrollTrigger: { trigger: ".team-heading", start: "top 82%", once: true },
-      });
-      const founder = $(".team-founder-card");
-      if (founder) {
-        gsap.from(founder, {
-          y: 55, autoAlpha: 0, duration: 0.9, ease: "power3.out",
-          scrollTrigger: { trigger: founder, start: "top 82%", once: true },
-        });
-        const founderPhoto = $(".team-photo-founder img");
-        if (founderPhoto) gsap.fromTo(founderPhoto,
-          { scale: 1.2, clipPath: "inset(10% 8% 10% 8%)" },
-          { scale: 1, clipPath: "inset(0% 0% 0% 0%)", duration: 1.25,
-            ease: "power3.out",
-            scrollTrigger: { trigger: founder, start: "top 80%", once: true } }
-        );
-        gsap.from(".founder-profile > *", {
-          x: 32, autoAlpha: 0, duration: 0.7, stagger: 0.12,
-          ease: "power3.out",
-          scrollTrigger: { trigger: founder, start: "top 72%", once: true },
-        });
-      }
-      gsap.from(".team-roster-heading > *", {
-        y: 28, autoAlpha: 0, duration: 0.65, stagger: 0.15,
-        scrollTrigger: { trigger: ".team-roster-heading", start: "top 86%", once: true },
-      });
-      $$(".leadership-card").forEach((card, i) => {
-        gsap.from(card, {
-          x: i === 0 ? -55 : 55, rotateY: i === 0 ? -5 : 5,
-          autoAlpha: 0, duration: 0.9, ease: "power3.out",
-          scrollTrigger: { trigger: card, start: "top 86%", once: true },
-        });
-        const img = $(".team-photo img", card);
-        if (img) gsap.fromTo(img, { scale: 1.18 }, {
-          scale: 1, duration: 1.1, ease: "power2.out",
-          scrollTrigger: { trigger: card, start: "top 86%", once: true },
-        });
-      });
-      $$(".core-member").forEach((member, i) => {
-        gsap.from(member, {
-          y: 30, autoAlpha: 0, duration: 0.65,
-          delay: i * 0.08, ease: "power3.out",
-          scrollTrigger: { trigger: member, start: "top 90%", once: true },
-        });
-      });
-      gsap.from(".team-endnote", {
-        scaleX: 0.75, autoAlpha: 0, duration: 0.7,
-        transformOrigin: "left center",
-        scrollTrigger: { trigger: ".team-endnote", start: "top 92%", once: true },
-      });
-    }
 
     // BETA — layered spotlight entrance and CTA sheen
     const beta = $(".beta-inner");
